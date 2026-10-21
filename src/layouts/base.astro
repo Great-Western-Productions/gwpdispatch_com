@@ -8,11 +8,13 @@ import { getMeta } from "@/lib/utils/getMeta";
 
 type Props = {
   entry: Entry;
+  category?: string;
+  categoryDescription?: string;
 };
 
-const { entry } = Astro.props;
+const { entry, category, categoryDescription } = Astro.props;
 
-const meta = await getMeta(entry);
+const meta = await getMeta(entry, category, categoryDescription);
 ---
 
 <!doctype html>

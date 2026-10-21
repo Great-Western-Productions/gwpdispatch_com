@@ -18,7 +18,7 @@ const categories = categoriesHandler.allCategoriesWithLatestArticles();
 <ListLayout
   header={"Sections"}
   kicker="Index"
-  description="Wire announcements, field reports from inside the build, and editorial dispatches."
+  description={entry.data.description}
   entry={entry}
 >
   <ul class="w-full space-y-14">

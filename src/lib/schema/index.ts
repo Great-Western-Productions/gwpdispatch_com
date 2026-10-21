@@ -24,6 +24,7 @@ export const viewSchema = z.object({
 
 export const categorySchema = z.object({
   title: z.string(),
+  description: z.string(),
   path: z
     .string()
     .regex(

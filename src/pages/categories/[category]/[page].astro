@@ -41,7 +41,13 @@ if (!entry) {
 const category = categoriesHandler.oneCategory(params.category as string);
 ---
 
-<ListLayout header={category.data.title} kicker="Section" entry={entry}>
+<ListLayout
+  header={category.data.title}
+  kicker="Section"
+  description={category.data.description}
+  category={category.data.title}
+  entry={entry}
+>
   <ul class="flex flex-col gap-2">
     {
       articles.map((article) => (
