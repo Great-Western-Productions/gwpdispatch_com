@@ -13,7 +13,8 @@ const renderCache = new Map<string, any>();
 
 export const getMeta = async (
   collection: GetMetaCollection,
-  category?: string
+  category?: string,
+  categoryDescription?: string
 ): Promise<Meta | ArticleMeta> => {
   try {
     const collectionId = `${collection.collection}-${collection.id}`;
@@ -66,7 +67,7 @@ export const getMeta = async (
       const meta: Meta = {
         title,
         metaTitle: capitalizeFirstLetter(collection.data.title),
-        description: collection.data.description,
+        description: categoryDescription ?? collection.data.description,
         ogImage: defaultImage.src,
         ogImageAlt: SITE.title,
         type: "website",

@@ -8,12 +8,17 @@ type Props = {
   kicker?: string;
   description?: string;
   entry: CollectionEntry<"views">;
+  category?: string;
 };
 
-const { entry, header, kicker, description } = Astro.props;
+const { entry, header, kicker, description, category } = Astro.props;
 ---
 
-<BaseLayout entry={entry}>
+<BaseLayout
+  entry={entry}
+  category={category}
+  categoryDescription={category ? description : undefined}
+>
   <div class="container pb-16" data-pagefind-ignore="all">
     <ViewListHeader
       title={header}
